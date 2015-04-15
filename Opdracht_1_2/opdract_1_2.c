@@ -18,15 +18,15 @@
 #include <string.h>
 
 int main(void) {
-	char ch[] = "Maikel";
+	unsigned char ch = getchar();
 
-	printf("ASCII waardes van: %s\n",ch);
-	fflush(stdout);
-
-	int i;
-	for(i = 0; i < strlen(ch); i++) {
-		printf("%d = %c\n",ch[i], ch[i]);
+	if(ch > 64 && ch < 91) {
+		printf("HOOFDLETTER ASCII waarde van %c in hexadecimaal: %#02x\n\n",ch,ch);
+	} else if(ch > 96 && ch < 123) {
+		printf("KLEINE LETTER ASCII waarde van %c: %d\n",ch,ch);
+	} else {
+		printf("%c",ch);
 	}
-
+	fflush(stdout);
 	return 0;
 }

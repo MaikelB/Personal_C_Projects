@@ -21,9 +21,24 @@ int main(void) {
 	int yy; //Inserted number 2
 	int zz; //xx + yy
 
-	printf("Insert two numbers seperated by a comma \n");
+	printf("Insert a number \n");
 	fflush(stdout);
-	scanf("%d,%d",&xx,&yy);
+	while(!scanf("%d",&xx)) {
+		printf("Wrong input, try again\n");
+		while(getchar() != '\n');
+		fflush(stdout);
+	}
+	while(getchar() != '\n');
+
+	printf("Insert a second number \n");
+	fflush(stdout);
+
+	while(!scanf("%d",&yy)) {
+		printf("Wrong input, try again\n");
+		while(getchar() != '\n') ;
+		fflush(stdout);
+	}
+
 	zz = xx+yy;
 	printf("%d + %d = %d",xx,yy,zz);
 
